@@ -1,4 +1,8 @@
 <?php namespace Ehtasham89\RouteSorter;
+/**
+ * Concrete class for TicketFactory extends TicketFactoryAbstract (Abstract Factory Design Pattern)
+ */
+
 
 use Ehtasham89\RouteSorter\Contracts\Factories\TicketFactoryAbstract;
 use Ehtasham89\RouteSorter\Tickets\Ticket;
@@ -8,11 +12,11 @@ class TicketFactory extends TicketFactoryAbstract{
     private static $ticketClass;
     /**
      * Creates an instance of a TicketAbstract.
-     * @return CommonCard If $ticket['class] is not defined then it returns Ticket as default.
+     * @return Ticket If $ticket['class] is not defined then it returns Ticket as default.
      * @param array $ticket
      */
     public static function create($ticket) {
-        //if type is not setted then use CommonCard class.
+        //if type is not setted then use Ticket class.
         if (isset($ticket['class'])) {
             //then use the class for type of PlaneTicket, BusTicket etc
             try {

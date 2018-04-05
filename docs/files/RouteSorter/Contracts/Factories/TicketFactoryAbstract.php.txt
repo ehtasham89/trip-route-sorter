@@ -1,6 +1,6 @@
 <?php namespace Ehtasham89\RouteSorter\Contracts\Factories;
 /**
- * Abstract class for TicketFactory
+ * Abstract factory design pattern class for TicketFactory
  */
 
  /**

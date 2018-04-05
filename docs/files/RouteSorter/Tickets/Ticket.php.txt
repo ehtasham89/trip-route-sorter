@@ -37,7 +37,7 @@ class Ticket extends TicketAbstract {
   protected $gate;
   
   /**
-   * Constructor for the CommonCard class.
+   * Constructor for the Ticket class.
    * @param array $card
    */
   function __construct(array $card) {
