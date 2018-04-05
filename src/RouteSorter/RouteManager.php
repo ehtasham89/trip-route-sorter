@@ -1,0 +1,82 @@
+<?php namespace Ehtasham89\RouteSorter;
+
+use Ehtasham89\RouteSorter\Helpers\SortRouteArray;
+use Ehtasham89\RouteSorter\Contracts\TicketAbstract;
+use Ehtasham89\RouteSorter\Passenger;
+
+/**
+ * Add multiple cards and assign passengers.
+ * Passengers should be instances of Passenger class.
+ * Trip card could sort with sortCards();
+ * @param array $passengers An array of instances of the Passenger class.
+ * @param array $Cards An array of the Card class.
+ */
+class RouteManager {
+  
+  /**
+   * An unordered array of Card class.
+  */
+  public $tickets = null;
+  
+  /**
+   * Instance(s) of Person class
+  */
+  public $passenger = '';
+  
+  /**
+   * Returns a string of the passenger name.
+   * @return name of the passenger.
+   */
+  public function getPassenger() {
+    return $this->passenger->name;
+  }
+  
+  /**
+   * Sets the passenger
+   * @param array $passenger
+   * @return RouteManager
+   */
+  public function setPassenger($passenger) {
+    if (!$passenger instanceof Passenger) {
+      throw new \Exception("Passenger(s) should be a instance of the Person class");
+    }
+    
+    $this->passenger = $passenger;
+
+    return $this;
+  }
+  
+  /**
+   * returns an array of passenger cards.
+   */
+  public function getTickets() {
+    return $this->tickets;
+  }
+  
+  /**
+   * Setter for tickets
+   * @param array $tickets an array of unsorted passenger cards.
+   * @return RouteManager
+   */
+  public function setTickets(array $tickets){
+    foreach ($tickets as $ticket) {
+      if (!$ticket instanceof TicketAbstract) {
+        throw new \Exception("Cards should be an instance of Card class");
+      }
+    }
+    
+    $this->tickets = $tickets;
+
+    return $this;
+  }
+  
+  /**
+   * Sorts tickets as ascended
+   * @return RouteManager
+   */
+  public function sortTickets() {
+      $this->tickets = SortRouteArray::sortArray($this->tickets);
+
+      return $this;
+  }
+}

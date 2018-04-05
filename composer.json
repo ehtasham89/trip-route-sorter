@@ -1,0 +1,21 @@
+{
+    "name": "ehtasham89/trip-route-sorter",
+    "description": "PHP Trip Route Sorter",
+    "type": "library",
+    "require": {
+        "php": ">=5.6.0",
+        "phpdocumentor/phpdocumentor": "2.*"
+    },
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "Ehtasham Nasir",
+            "email": "ehtasham.nasir89@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+          "Ehtasham89\\": "src/"
+        }
+      }
+}

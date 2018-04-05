@@ -1,0 +1,97 @@
+<?php namespace Ehtasham89\RouteSorter\Tickets;
+/**
+ * The class uses for creating a card to use of passanger
+ */
+
+use Ehtasham89\RouteSorter\Contracts\TicketAbstract;
+
+/**
+ * The class uses for creating a card to use of passanger
+ */
+
+class Ticket extends TicketAbstract {
+  
+  /**
+   * Source point of the ticket.
+   */
+  protected $source;
+  
+  /**
+   * Destination of the ticket.
+   */
+  protected $destination;
+  
+  /**
+   * Vehicle type of the ticket.
+   */
+  protected $vehicle;
+  
+  /**
+   * Seat number of the ticket.
+   */
+  protected $seat;
+  
+  /**
+   * Gate # of the ticket.
+   */
+  protected $gate;
+  
+  /**
+   * Constructor for the CommonCard class.
+   * @param array $card
+   */
+  function __construct(array $card) {
+    $this->source       = $card['source'];
+    $this->destination  = $card['destination'];
+    $this->vehicle      = $card['vehicle'];
+    $this->seat         = $card['seat'];
+    $this->gate         = $card['gate'];
+    
+    return $this;
+  }
+  
+  /**
+   * Get source from ticket
+   * @param null
+   * @return string
+   */
+  public function getSource() {
+    return $this->source;
+  }
+
+  /**
+   * Get destination from ticket
+   * @param null
+   * @return string
+   */
+  public function getDestination() {
+    return $this->destination;
+  }
+
+  /**
+   * Get vehicle from ticket
+   * @param null
+   * @return string
+   */
+  public function getVehicle() {
+    return $this->vehicle;
+  }
+
+  /**
+   * Get seat from ticket
+   * @param null
+   * @return string
+   */
+  public function getSeat() {
+    return $this->seat;
+  }
+
+  /**
+   * Get gate from ticket
+   * @param null
+   * @return string
+   */
+  public function getGate() {
+    return $this->gate;
+  }
+}
