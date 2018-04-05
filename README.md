@@ -17,8 +17,12 @@ test
 $ php test/index.php
 
 
-Docs 
+How to use... 
 ----------------------------------------------
+### Composer
+    Update composer generate autoload files.
+    $ composer update
+    $ composer dump-autoload
 ### Add bootstrap file.
     require_once 'src/bootstrap.php';
 
@@ -30,11 +34,12 @@ Docs
 ### Create some tickets
     $tickets = [
         [
-        'source' => 'Union Metro Station',
-        'destination' => 'Dubai Airport',
-        'vehicle' => 'metro',
-        'seat' => null,
-        'gate' => null
+            'source' => 'Union Metro Station',
+            'destination' => 'Dubai Airport',
+            'vehicle' => 'metro',
+            'seat' => null,
+            'gate' => null,
+            'class' => 'SomeNameSpace\ClassName' // new kind of ticket type
         ],
         [
             'source' => 'Al-Majaz, Sharjah',
@@ -45,5 +50,30 @@ Docs
         ]
     ];
 
+### Create passenger
+    $passengers = new Passenger();
+    $passenger->create('Ehtasham');
 
+### Create set of boarding cards
+    $ticketFactory = new TicketFactory();
+    $boardingCards = [];
+
+    foreach ($testBoardingCards as $bCard) {
+        array_push($boardingCards, $ticketFactory->create($bCard));
+    }
+
+### Give the correct order to the crowd
+    $routeManager = new RouteManager();
+
+    //Assign passenger and boarding cards
+    $routeManager->setPassenger($passenger)->setTickets($boardingCards);
+
+    //Get passenger from route manager
+    $passenger = $routeManager->getPassenger();
+
+    //Get sorted boarding cards array from route manager
+    $tripRoute = $routeManager->sortTickets()->getTickets();
+    
+
+>Please check documentation for more information.
 
