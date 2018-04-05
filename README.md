@@ -14,7 +14,8 @@ Trip boarding card route sorter for random cards.
 
 test 
 ----------------------------------------------
-$ php test/index.php
+$ cd test
+$ php index.php
 
 
 How to use... 
