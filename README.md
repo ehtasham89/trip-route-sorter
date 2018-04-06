@@ -12,9 +12,12 @@ Trip boarding card route sorter for random cards.
 * SortInterface: can be use for new algorithm
 * TicketFactoryAbstract: Abstract factory design pattern class for TicketFactory
 
-test 
+Install Composer 
 ----------------------------------------------
->You need to install composer first: https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx
+You need to install composer first: https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx
+
+Test 
+----------------------------------------------
     $ cd test
     $ php index.php
 
