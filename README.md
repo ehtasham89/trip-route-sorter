@@ -14,6 +14,7 @@ Trip boarding card route sorter for random cards.
 
 test 
 ----------------------------------------------
+>You need to install composer first: https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx
     $ cd test
     $ php index.php
 
